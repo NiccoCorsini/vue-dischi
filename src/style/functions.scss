@@ -1,0 +1,22 @@
+@mixin hoverChooser($choose) {
+  transition: all 300ms;
+  cursor: pointer;
+  @if $choose == "scale" {
+    &:hover {
+      transform: scale(1.05);
+    }
+  } @else if $choose == "font" {
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}
+
+@mixin rotate() {
+  animation: rotate 500ms linear infinite forwards;
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
