@@ -15,7 +15,6 @@ export default {
 
 header {
   background: $content-fill-color;
-  margin-bottom: 20px;
   img {
     width: 50px;
     margin: 10px;

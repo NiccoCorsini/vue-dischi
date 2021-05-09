@@ -1,0 +1,26 @@
+.container-total {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+  .disk-container {
+    margin: 1rem;
+    width: calc(100% / 9 - 10px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-total {
+    .disk-container {
+      width: calc(100% / 5 - 10px);
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container-total {
+    .disk-container {
+      width: calc(100% / 2.8);
+    }
+  }
+}

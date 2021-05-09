@@ -48,27 +48,20 @@ export default {
   },
   created() {
     this.getApi();
-    // this.genreExtractor();
   },
   updated() {
     this.genreExtractor();
     this.searchType();
   },
-  // computed: {
-  //   tiprego() {
-  //     return console.log(this.discs);
-  //   },
-  // },
-  // mounted() {
-  //   console.log(this.discs);
-  // },
   methods: {
     getApi() {
       axios
         .get(this.ApiUrl)
         .then((res) => {
           this.discs = res.data.response;
-          this.loading = false;
+          setTimeout(() => {
+            this.loading = false;
+          }, 2000);
         })
         .catch((err) => {
           console.log("Error", err);
@@ -108,27 +101,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container-total {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  .disk-container {
-    margin: 1rem;
-    width: calc(100% / 9 - 10px);
-  }
-}
-@media screen and (max-width: 768px) {
-  .container-total {
-    .disk-container {
-      width: calc(100% / 5 - 10px);
-    }
-  }
-}
-@media screen and (max-width: 420px) {
-  .container-total {
-    .disk-container {
-      width: calc(100% / 2.8);
-    }
-  }
-}
+@import "../style/main";
 </style>
